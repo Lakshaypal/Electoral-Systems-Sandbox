@@ -1,124 +1,38 @@
-# 🇮🇳 ONEO: One Nation, One Election Simulator
+# Election Simulator — Hobby Visualisation Project
 
-![Status](https://img.shields.io/badge/Status-Live_on_Vercel-success?style=for-the-badge&logo=vercel) ![Tech](https://img.shields.io/badge/Tech-React_|_Vite_|_Gemini_AI-blue?style=for-the-badge) ![Domain](https://img.shields.io/badge/Domain-Policy_Tech-orange?style=for-the-badge)
+A personal learning project built around election-synchronisation scenarios. It explores React dashboards, timelines, charts and an optional Gemini-generated explanation panel.
 
-**ONEO (Election Synchronization Feasibility & Impact Simulator)** is a comprehensive decision-support platform designed to simulate, visualize, and quantify the constitutional, financial, and administrative impacts of implementing simultaneous elections in India.
+**Hobby prototype:** numerical assumptions are hard-coded demonstrations, not validated policy forecasts or an official election dataset. The interface is intended for experimenting with visualisation and application state.
 
----
+## Screens
 
-## 🚀 Live Simulation
-Explore the deployed platform here:
-### 🔗 [https://oneo.vercel.app](https://oneo.vercel.app)
+- Overview and election-cycle timelines.
+- Illustrative financial, administrative and governance comparisons.
+- A scenario-selection wizard and optional AI explanations.
+- Reference links and contextual constitutional information.
 
----
+The scenario wizard currently keeps its own local state; it is not a fully integrated policy-simulation engine. Constitutional text is prototype content rather than legal guidance.
 
-## 🌟 Key Simulation Modules
+## Run locally
 
-### 1. 📊 Overview Dashboard
-A central command center providing a side-by-side view of key governance indicators under existing election cycles versus synchronized elections.
-*   **Current vs ONOE Comparison:** Side-by-side view of key governance indicators.
-*   **Election Expenditure:** Compares annual election-related spending with projected costs under ONOE.
-*   **Administrative Man-Days:** Shows reduction in repeated deployment of officials and staff.
-*   **MCC Paralysis Impact:** Quantifies days of Model Code of Conduct and associated policy standstill.
-*   **Distribution Index:** Measures how evenly election-related burden is spread across years and regions.
-*   **Comparison Matrix:** Displays differences in Annual Election Expenditure, Average MCC Days per Cycle, Security Personnel Mobilization, and EVM/VVPAT Requirements.
-*   **Efficiency Gains:** Highlights savings and operational relief in personnel deployment and security mobilization.
-*   **15-Year Fiscal Viability Graph:** Assesses whether ONOE is financially sustainable over time.
-*   **Regional Synchronization Hub:** Visualizes state-wise readiness and alignment patterns.
-*   **Legislative Feasibility:** Tracks Constitutional Amendment Score and Administrative Relief.
+Use Node.js 20+:
 
-### 2. ⏳ Timeline Simulator
-A dynamic visualizer allowing user selection of a State, base election year, and analysis period (5 / 10 / 15 years).
-*   **Parallel Timelines:** Displays two clear timelines:
-    *   **Current System:** Elections occurring at different points in time.
-    *   **ONOE Scenario:** Elections aligned as per synchronization model.
-*   **Total Voter Mobilizations:** Shows how often voters are required to participate across the selected period.
-*   **Governance Pause Days:** Captures cumulative days affected by the Model Code of Conduct.
-*   **Why It Matters:** Highlights election frequency vs. governance continuity and supports evidence-based decisions on administrative efficiency.
+```sh
+git clone https://github.com/Lakshaypal/hobby-election-simulator.git
+cd hobby-election-simulator
+npm ci
+npm run dev
+```
 
-### 3. 💰 Financial Impact
-A deep dive into the fiscal implications of democracy.
-*   **User Controls:** Select analysis period and scope (specific State + Lok Sabha, or all including local bodies).
-*   **Cost Comparison:**
-    *   **Current Spending (Baseline):** Existing election expenditure.
-    *   **New System Cost (ONOE):** Projected cost with synchronization.
-    *   **Total Money Saved:** Estimated financial benefit from consolidation.
-*   **Expenditure Benchmarking Graph:** Shows trends, peaks, and savings over time.
-*   **Why It Matters:** Quantifies short-term transition costs vs. long-term savings to support budget planning.
+Vite starts on port 3000. To build a static bundle:
 
-### 4. 🛡️ Administrative Load
-Focuses on the human resource strain on government machinery.
-*   **Poll Events Conducted:** Number of elections held under current system vs ONOE.
-*   **Cumulative MCC Days:** Total days impacted by the Model Code of Conduct.
-*   **Administrative Man-Days:** Total staff deployment required for conducting elections.
-*   **Educational Resilience:** Measures disruption to schools and educational institutions.
-*   **Burden Distribution Graph:** Visualizes how election workload is spread across years.
-*   **Why It Matters:** Demonstrates operational efficiency gains and visible impact on education continuity.
+```sh
+npm run build
+npm run preview
+```
 
-### 5. 🏛️ Governance & MCC Simulator
-Analyzes the friction caused by frequent polls.
-*   **Cumulative MCC Burden:** Total days under the Model Code of Conduct showing governance constraints.
-*   **Total Poll Impositions:** Number of elections impacting normal administration.
-*   **Average Annual Downtime:** Mean number of days per year when policy implementation is slowed.
-*   **Stability Index:** Quantitative measure of administrative and policy continuity.
-*   **Government Friction Audit Graph:** Visual representation of stress points and operational friction.
-*   **Why It Matters:** Translates complex administrative disruption into clear, actionable metrics.
+The optional AI service currently requests `gemini-3-pro-preview`. Without a key, the charts and scenario calculations still run. The existing frontend integration embeds a configured key in the browser bundle; a public AI deployment needs a server-side proxy. Never put a private API key in a publicly served build.
 
-### 6. ⚖️ Legal & Constitutional
-A roadmap for the necessary legal framework.
-*   **Need for Amendments:** Highlights required changes to Articles 83, 85, 172, 174, 356.
-*   **Primary Legal Blockers:** Addresses term mismatches, early dissolution scenarios, and governance conflicts.
-*   **Proposed Solutions:** Visualizes Kovind Committee Recommendations (e.g., aligning terms, contingency provisions).
-*   **Purpose:** Links policy design with operational feasibility.
+## Stack
 
-### 7. 🤖 Scenario Builder (AI-Powered)
-The "Brain" of the platform allowing "What-If" experimentation.
-*   **Flexible Inputs:** Allows selection of Current System, Partial ONOE, or Full ONOE scenarios.
-*   **Integrated Analysis:** Automatically generates **AI-driven policy briefs** using Google Gemini.
-*   **Comparative Insights:** Provides instant analysis on Financial Impact, Administrative Load, Governance Indicators, and Legal Considerations.
-*   **Output:** Decision-ready AI brief and visual dashboards.
-
----
-
-## 🛠️ Tech Stack
-
-*   **Frontend:** React 19 (Functional Components)
-*   **Build Tool:** Vite (High-performance tooling)
-*   **Styling:** Tailwind CSS (Glassmorphism & Responsive Design)
-*   **Visualization:** Recharts (Data visualization)
-*   **AI Engine:** Google Gemini (the service currently requests `gemini-3-pro-preview` via the Google GenAI SDK)
-*   **Icons:** Lucide React
-
----
-
-## 💻 Getting Started Locally
-
-If you wish to run the simulator on your local machine:
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/Lakshaypal/ONEO.git
-    cd ONEO
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
-
-3.  **Set up Environment Variables**
-    Create a `.env` file in the root directory to enable the AI features:
-    ```env
-    GEMINI_API_KEY=your_google_gemini_api_key_here
-    ```
-
-The calculations use constants and heuristic assumptions in the source; they are illustrative scenarios, not validated forecasts or an official election dataset. The optional AI integration currently embeds its configured key in the browser bundle. Use this only for controlled local development; a public deployment needs a server-side AI proxy and must not include a private API key. Without a key, the scenario calculations remain available.
-
-4.  **Run the development server**
-    ```bash
-    npm run dev
-    ```
-
----
-
-Made with ❤️ for the **One Nation One Election Hackathon**.
+React, TypeScript, Vite, Recharts, Lucide and the Google GenAI SDK. This is a hobby/demo repository, separate from the research projects on this profile.
