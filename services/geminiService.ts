@@ -2,6 +2,7 @@
 import { GoogleGenAI } from "@google/genai";
 
 export async function analyzePolicyScenario(prompt: string) {
+  if (!process.env.API_KEY) return "AI analysis is not configured. The scenario calculations remain available.";
   try {
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const response = await ai.models.generateContent({

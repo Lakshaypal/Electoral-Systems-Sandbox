@@ -86,7 +86,7 @@ The "Brain" of the platform allowing "What-If" experimentation.
 *   **Build Tool:** Vite (High-performance tooling)
 *   **Styling:** Tailwind CSS (Glassmorphism & Responsive Design)
 *   **Visualization:** Recharts (Data visualization)
-*   **AI Engine:** Google Gemini 1.5 Pro (via Google GenAI SDK)
+*   **AI Engine:** Google Gemini (the service currently requests `gemini-3-pro-preview` via the Google GenAI SDK)
 *   **Icons:** Lucide React
 
 ---
@@ -111,6 +111,8 @@ If you wish to run the simulator on your local machine:
     ```env
     GEMINI_API_KEY=your_google_gemini_api_key_here
     ```
+
+The calculations use constants and heuristic assumptions in the source; they are illustrative scenarios, not validated forecasts or an official election dataset. The optional AI integration currently embeds its configured key in the browser bundle. Use this only for controlled local development; a public deployment needs a server-side AI proxy and must not include a private API key. Without a key, the scenario calculations remain available.
 
 4.  **Run the development server**
     ```bash
