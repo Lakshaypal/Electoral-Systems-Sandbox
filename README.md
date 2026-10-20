@@ -1,4 +1,4 @@
-# Election Simulator — Hobby Visualisation Project
+# Electoral Systems Sandbox — Hobby Visualisation Project
 
 A personal learning project built around election-synchronisation scenarios. It explores React dashboards, timelines, charts and an optional Gemini-generated explanation panel.
 
@@ -18,8 +18,8 @@ The scenario wizard currently keeps its own local state; it is not a fully integ
 Use Node.js 20+:
 
 ```sh
-git clone https://github.com/Lakshaypal/hobby-election-simulator.git
-cd hobby-election-simulator
+git clone https://github.com/Lakshaypal/Electoral-Systems-Sandbox.git
+cd Electoral-Systems-Sandbox
 npm ci
 npm run dev
 ```
